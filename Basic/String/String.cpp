@@ -20,10 +20,11 @@ static int& get_value2() {
 
 int main()
 {
-    string str_arr[3]{ "aaa", "bbb", "ccc" };
+    string str_arr[4]{ "aaa", "bbb", "ccc", "ddd"};
     cout << str_arr[0] << endl;
     cout << str_arr[1] << endl;
     cout << str_arr[2] << endl;
+    cout << str_arr[3] << endl;
 
     char ccc[]{ 'a','b','c','d', 'E','\n','\0'}; // c string
     printf(ccc);
