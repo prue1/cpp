@@ -1,6 +1,6 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include "jni_CppJni.h"
+#include "code_example_jni_CppJni.h"
 #include <cmath>
 #include <iostream>
 
@@ -27,10 +27,10 @@ BOOL APIENTRY DllMain(HMODULE hModule,
  * Method:    random
  * Signature: ()D
  */
-JNIEXPORT jdouble JNICALL Java_jni_CppJni_random
+JNIEXPORT jdouble JNICALL Java_code_example_jni_CppJni_random
 (JNIEnv*, jobject) {
 
-    return ((double)rand()) / 100000;
+    return ((double)rand()) / 10;
 }
 
 /*
@@ -38,7 +38,7 @@ JNIEXPORT jdouble JNICALL Java_jni_CppJni_random
  * Method:    add
  * Signature: (II)J
  */
-JNIEXPORT jlong JNICALL Java_jni_CppJni_add
+JNIEXPORT jlong JNICALL Java_code_example_jni_CppJni_add
 (JNIEnv*, jobject, jint a, jint b) {
     return a + b;
 }
@@ -48,7 +48,7 @@ JNIEXPORT jlong JNICALL Java_jni_CppJni_add
  * Method:    sort
  * Signature: ([D)[D
  */
-JNIEXPORT jdoubleArray JNICALL Java_jni_CppJni_sort
+JNIEXPORT jdoubleArray JNICALL Java_code_example_jni_CppJni_sort
 (JNIEnv* env, jobject, jdoubleArray a) {
 
     jsize size = env->GetArrayLength(a);
@@ -74,10 +74,10 @@ JNIEXPORT jdoubleArray JNICALL Java_jni_CppJni_sort
  * Method:    getSimpleMath
  * Signature: ()Ljni/SimpleMath;
  */
-JNIEXPORT jobject JNICALL Java_jni_CppJni_getSimpleMath
+JNIEXPORT jobject JNICALL Java_code_example_jni_CppJni_getSimpleMath
 (JNIEnv* env, jobject) {
 
-    jclass clazz = env->FindClass("jni/SimpleMath");
+    jclass clazz = env->FindClass("code/example/jni/SimpleMath");
     jmethodID cid = env->GetMethodID(clazz, "max", "(II)I");
     jmethodID cid2 = env->GetMethodID(clazz, "min", "(II)I");
 
